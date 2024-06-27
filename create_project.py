@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 import shutil
-from distutils.dir_util import copy_tree
+# from distutils.dir_util import copy_tree
 from termcolor import colored
 
 def createProject():
@@ -14,9 +14,10 @@ def createProject():
     if directory_exists:
         print(colored('Directory already exists', 'red'))
     else:
-        copy_tree(PROJECT_STARTER, project_name)
+        shutil.copytree(PROJECT_STARTER, project_name)
         os.chdir(project_name)
-        shutil.rmtree('.git')
+        if os.path.exists('.git'):
+            shutil.rmtree('.git')
 # replace occurience
         command = f'find . -type f -exec sed -i "s/bs-vite/{project_name}/g" {{}} \\;'
         command2 = f'find . -type f -exec sed -i "s/bs_vite/{project_name_underscore}/g" {{}} \\;'
