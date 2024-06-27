@@ -5,7 +5,7 @@ from distutils.dir_util import copy_tree
 from termcolor import colored
 
 def createProject():
-    PROJECT_STARTER = '/home/serii/Local/lc-vite/app/public/wp-content/themes/bs-vite'
+    PROJECT_STARTER = '/home/serii/Local Sites/lc-vite/app/public/wp-content/themes'
     project_name = input('Enter project name: ')
     project_name_underscore = project_name.replace('-', '_')
 
