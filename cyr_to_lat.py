@@ -14,8 +14,9 @@ filesSpaceToUnderscores()
 languages = [ {"Ё": "YO"}, {"Й": "I"}, {"Ц": "TS"}, {"У": "U"}, {"К": "K"}, {"Е": "E"}, {"Н": "N"}, {"Г": "G"}, {"Ш": "SH"}, {"Щ": "SCH"}, {"З": "Z"}, {"Х": "H"}, {"Ъ": "I"}, {"ё": "yo"}, {"й": "i"}, {"ц": "ts"}, {"у": "u"}, {"к": "k"}, {"е": "e"}, {"н": "n"}, {"г": "g"}, {"ш": "sh"}, {"щ": "sch"}, {"з": "z"}, {"х": "h"}, {"ъ": "i"}, {"Ф": "F"}, {"Ы": "I"}, {"В": "V"}, {"А": "A"}, {"П": "P"}, {"Р": "R"}, {"О": "O"}, {"Л": "L"}, {"Д": "D"}, {"Ж": "ZH"}, {"Э": "E"}, {"ф": "f"}, {"ы": "i"}, {"в": "v"}, {"а": "a"}, {"п": "p"}, {"р": "r"}, {"о": "o"}, {"л": "l"}, {"д": "d"}, {"ж": "zh"}, {"э": "e"}, {"Я": "Ya"}, {"Ч": "CH"}, {"С": "S"}, {"М": "M"}, {"И": "I"}, {"Т": "T"}, {"Ь": "I"}, {"Б": "B"}, {"Ю": "YU"}, {"я": "ya"}, {"ч": "ch"}, {"с": "s"}, {"м": "m"}, {"и": "i"}, {"т": "t"}, {"ь": "i"}, {"б": "b"}, {"ю": "yu"} ]
 
 def cyrToLat():
-    pyfzf = FzfPrompt()
-    filename = pyfzf.prompt()
+    fzf = FzfPrompt()
+    files = [i for i in os.listdir('.') if not i.startswith('.')]
+    filename = fzf.prompt(files)[0]
     print(colored(filename, "green"))
     new_file = filename
     os.system(f'id3convert -s {filename}')
