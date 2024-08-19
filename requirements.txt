@@ -1,2 +1,1 @@
-pyperclip==1.8.2
-termcolor==2.4.0
+pyfzf==0.3.1
