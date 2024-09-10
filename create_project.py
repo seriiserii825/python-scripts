@@ -5,7 +5,7 @@ import shutil
 from termcolor import colored
 
 def createProject():
-    PROJECT_STARTER = '/home/serii/Local Sites/lc-vite/app/public/wp-content/themes/bs-vite'
+    PROJECT_STARTER = '/home/serii/Documents/Sites/wp-projects/bs-vite'
     project_name = input('Enter project name: ')
     project_name_underscore = project_name.replace('-', '_')
 
