@@ -7,10 +7,8 @@ def bitbucketUrl():
     clipboard = pyperclip.paste()
 
     if clipboard.startswith('git clone git@bitbucket.org:sites-bludelego'):
-        print(colored(f'\nbitbucket url', 'green'))
         clipboard = clipboard.replace(clipboard, 'git clone git@bitbucket.org-b:sites-bludelego')
-        print(colored(f'\n{clipboard}', 'blue'))
         addToClipBoard(clipboard)
     else:
-        print(colored(f'\nnot a bitbucket url', 'red'))
+        print('Not a valid Bitbucket URL')
 

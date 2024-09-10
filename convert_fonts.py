@@ -1,7 +1,9 @@
 import os
 import subprocess
+import time
 from libs.buffer import addToClipBoardFile
 
+start_time = time.time()
 def convertFontsFunc():
     def checkInstalledApps():
         retval = subprocess.call(["which", "woff2_compress"])
@@ -80,3 +82,4 @@ def convertFontsFunc():
     addToClipBoardFile('fonts.css')
     command="rm fonts.css"
     os.system(command)
+    print("--- %s seconds ---" % (time.time() - start_time))
