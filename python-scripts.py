@@ -5,12 +5,15 @@ from bitbucket import bitbucketUrl
 from convert_fonts import convertFontsFunc
 from create_project import createProject
 from cyr_to_lat import cyrToLat
+from openGitRepo import openGitRepo
+from rich import print
 
 def menu():
-    print(colored("1. Create project", "magenta"))
-    print(colored("2. Convert fonts", "blue"))
-    print(colored("3. Cyr to lat", "yellow"))
-    print(colored("4. Bitbucket change url", "blue"))
+    print("[green]1. Create project")
+    print("[blue]2. Convert fonts")
+    print("[green]3. Cyr to lat")
+    print("[blue]4. Bitbucket change url")
+    print("[green]5. Open github or bitbucket")
 
     choose = input("Choose number: ")
     if choose == "1":
@@ -21,6 +24,8 @@ def menu():
         cyrToLat()
     elif choose == "4":
         bitbucketUrl()
+    elif choose == "5":
+        openGitRepo()
     else:
         exit()
 
