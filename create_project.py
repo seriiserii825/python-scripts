@@ -6,7 +6,9 @@ from termcolor import colored
 
 def createProject():
     current_user = os.getlogin()
+    print(f'current_user: {current_user}')
     PROJECT_STARTER = f'/home/{current_user}/Documents/Sites/wp-projects/bs-vite'
+    print(f"PROJECT_STARTER: {PROJECT_STARTER}")
     project_name = input('Enter project name: ')
     project_name_underscore = project_name.replace('-', '_')
 
