@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from calcBlocks import calcBlocks
 from generatePassword import generatePassword
 from termcolor import colored
 from bitbucket import bitbucketUrl
@@ -16,6 +17,7 @@ def menu():
     print("[blue]4. Bitbucket change url")
     print("[green]5. Open github or bitbucket")
     print("[yellow]6. Generate password")
+    print("[blue]7. Calculate percentages")
 
     choose = input("Choose number: ")
     if choose == "1":
@@ -30,7 +32,13 @@ def menu():
         openGitRepo()
     elif choose == "6":
         generatePassword()
+    elif choose == "7":
+        calcBlocks()
     else:
         exit()
 
 menu()
+
+# 1000
+# 400
+# 300
