@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from generatePassword import generatePassword
 from termcolor import colored
 from bitbucket import bitbucketUrl
 from convert_fonts import convertFontsFunc
@@ -14,6 +15,7 @@ def menu():
     print("[green]3. Cyr to lat")
     print("[blue]4. Bitbucket change url")
     print("[green]5. Open github or bitbucket")
+    print("[yellow]6. Generate password")
 
     choose = input("Choose number: ")
     if choose == "1":
@@ -26,6 +28,8 @@ def menu():
         bitbucketUrl()
     elif choose == "5":
         openGitRepo()
+    elif choose == "6":
+        generatePassword()
     else:
         exit()
 
