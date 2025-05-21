@@ -3,6 +3,7 @@
 from aspectRatio import aspectRatio
 from calcBlocks import calcBlocks
 from generatePassword import generatePassword
+from sortFiles import sortFiles
 from termcolor import colored
 from bitbucket import bitbucketUrl
 from convert_fonts import convertFontsFunc
@@ -20,6 +21,7 @@ def menu():
     print("[yellow]6. Generate password")
     print("[blue]7. Calculate percentages")
     print("[green]8. Aspect Ratio")
+    print("[blue]9. Sort files")
 
     choose = input("Choose number: ")
     if choose == "1":
@@ -38,6 +40,8 @@ def menu():
         calcBlocks()
     elif choose == "8":
         aspectRatio()
+    elif choose == "9":
+        sortFiles()
     else:
         exit()
 
