@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from aspectRatio import aspectRatio
 from calcBlocks import calcBlocks
 from generatePassword import generatePassword
 from termcolor import colored
@@ -18,6 +19,7 @@ def menu():
     print("[green]5. Open github or bitbucket")
     print("[yellow]6. Generate password")
     print("[blue]7. Calculate percentages")
+    print("[green]8. Aspect Ratio")
 
     choose = input("Choose number: ")
     if choose == "1":
@@ -34,6 +36,8 @@ def menu():
         generatePassword()
     elif choose == "7":
         calcBlocks()
+    elif choose == "8":
+        aspectRatio()
     else:
         exit()
 
