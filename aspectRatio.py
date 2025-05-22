@@ -26,6 +26,6 @@ def aspectRatio():
     else:
         aspect_ratio = "1/1"
 
-    aspect_ratio = f"aspect-ratio: {aspect_ratio}"
+    aspect_ratio = f"aspect-ratio: {aspect_ratio};"
     pyperclip.copy(aspect_ratio)
     os.system(f"notify-send 'Aspect ratio {aspect_ratio} copied to clipboard'")
