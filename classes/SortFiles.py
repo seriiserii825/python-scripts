@@ -7,7 +7,9 @@ class SortFiles:
         self.current_path = os.getcwd()
         self.folder_path = ""
         self.selected_path = ""
-        self.go_on = input(f"current folder is: '{self.current_path}', do you want to continue, (y/n)? ")
+        input_text = f"current folder is: '{self.current_path}',\
+                do you want to continue, (y/n)? "
+        self.go_on = input(input_text)
         if self.go_on != 'y':
             exit()
 
@@ -16,7 +18,7 @@ class SortFiles:
         Create a folder based on the file extension.
         """
         folder_name: str = ext[1:]
-        self.folder_path: str = os.path.join(self.current_path, folder_name)
+        self.folder_path = os.path.join(self.current_path, folder_name)
 
         if not os.path.exists(self.folder_path):
             os.mkdir(self.folder_path)
