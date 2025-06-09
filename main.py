@@ -1,10 +1,8 @@
-#!/usr/bin/python3
-
 from aspectRatio import aspectRatio
 from calcBlocks import calcBlocks
 from generatePassword import generatePassword
+from git_mirror import from_bitbucket_radu_to_bludelego
 from sortFiles import sortFiles
-from termcolor import colored
 from bitbucket import bitbucketUrl
 from convert_fonts import convertFontsFunc
 from create_project import createProject
@@ -22,6 +20,7 @@ def menu():
     print("[blue]7. Calculate percentages")
     print("[green]8. Aspect Ratio")
     print("[blue]9. Sort files")
+    print("[green]10. Git mirror")
 
     choose = input("Choose number: ")
     if choose == "1":
@@ -42,6 +41,8 @@ def menu():
         aspectRatio()
     elif choose == "9":
         sortFiles()
+    elif choose == "10":
+        from_bitbucket_radu_to_bludelego()
     else:
         exit()
 

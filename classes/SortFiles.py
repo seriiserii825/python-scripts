@@ -7,9 +7,7 @@ class SortFiles:
         self.current_path = os.getcwd()
         self.folder_path = ""
         self.selected_path = ""
-        input_text = f"current folder is: '{self.current_path}',\
-                do you want to continue, (y/n)? "
-        self.go_on = input(input_text)
+        self.go_on = input(f"current folder is: '{self.current_path}', do you want to continue, (y/n)? ")
         if self.go_on != 'y':
             exit()
 
