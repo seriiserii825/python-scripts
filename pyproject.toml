@@ -1,0 +1,33 @@
+[project]
+name = "my_project"
+version = "0.1.0"
+description = ""
+dependencies = [
+    "autopep8==2.3.2",
+    "flake8==7.2.0",
+    "llvmlite==0.43.0",
+    "markdown-it-py==3.0.0",
+    "mccabe==0.7.0",
+    "mdurl==0.1.2",
+    "mypy==1.16.0",
+    "mypy-extensions==1.1.0",
+    "numba==0.60.0",
+    "numpy==2.0.2",
+    "packaging==25.0",
+    "pathspec==0.12.1",
+    "pillow==11.2.1",
+    "plyer==2.1.0",
+    "prompt-toolkit==3.0.51",
+    "pycodestyle==2.13.0",
+    "pyflakes==3.3.2",
+    "pyfzf==0.3.1",
+    "pygments==2.18.0",
+    "pyperclip==1.9.0",
+    "pytesseract==0.3.13",
+    "questionary==2.1.0",
+    "rich==13.8.1",
+    "simple-term-menu==1.6.6",
+    "termcolor==2.4.0",
+    "typing-extensions==4.14.0",
+    "wcwidth==0.2.13",
+]
