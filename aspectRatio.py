@@ -1,14 +1,17 @@
-import pyperclip
 import os
+
+import pyperclip
+
+
 def aspectRatio():
     aspect_ratio = 1
     data = input("Enter width and height w,h: ")
-    if data and ',' in data:
-        width, height = data.split(',') 
+    if data and "," in data:
+        width, height = data.split(",")
         if not width.strip().isdigit():
-            exit('width is not digit')
+            exit("width is not digit")
         if not height.strip().isdigit():
-            exit('height is not digit')
+            exit("height is not digit")
     else:
         exit("enter width,height by comma")
 

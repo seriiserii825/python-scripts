@@ -1,9 +1,10 @@
-import string
-import secrets
-import pyperclip
 import os
+import secrets
+import string
 
+import pyperclip
 from pyfzf.pyfzf import FzfPrompt
+
 
 def containsUppercase(password):
     for char in password:
@@ -11,11 +12,13 @@ def containsUppercase(password):
             return True
     return False
 
+
 def containsSymbols(password):
     for char in password:
         if char in string.punctuation:
             return True
     return False
+
 
 def getPassword(length=12, symbols=True, uppercase=True):
     combination: str = string.ascii_lowercase + string.digits
@@ -25,19 +28,21 @@ def getPassword(length=12, symbols=True, uppercase=True):
         combination += string.ascii_uppercase
 
     combination_length = len(combination)
-    password = ''
+    password = ""
     for _ in range(length):
         password += combination[secrets.randbelow(combination_length)]
-    
+
     return password
+
 
 def copyToClipboard(password):
     pyperclip.copy(password)
     os.system("notify-send 'Password copied to clipboard'")  # Linux
 
+
 def generatePassword():
     length = int(input("Enter the length of the password: "))
-    symbols = input("Include symbols? (y/n): ").lower() == 'y'
+    symbols = input("Include symbols? (y/n): ").lower() == "y"
 
     passwords = []
 

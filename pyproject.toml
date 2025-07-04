@@ -3,14 +3,10 @@ name = "my_project"
 version = "0.1.0"
 description = ""
 dependencies = [
-    "autopep8==2.3.2",
-    "flake8==7.2.0",
     "llvmlite==0.43.0",
     "markdown-it-py==3.0.0",
     "mccabe==0.7.0",
     "mdurl==0.1.2",
-    "mypy==1.16.0",
-    "mypy-extensions==1.1.0",
     "numba==0.60.0",
     "numpy==2.0.2",
     "packaging==25.0",
@@ -26,8 +22,35 @@ dependencies = [
     "pytesseract==0.3.13",
     "questionary==2.1.0",
     "rich==13.8.1",
+    "ruff>=0.12.2",
     "simple-term-menu==1.6.6",
     "termcolor==2.4.0",
     "typing-extensions==4.14.0",
     "wcwidth==0.2.13",
+]
+[tool.ruff]
+line-length = 88
+exclude = [
+    "migrations",
+    "tests",
+    "docs",
+    "build",
+    "dist",
+    "venv",
+    ".venv",
+    ".git",
+    "__pycache__",
+]
+fix = true
+unsafe-fixes = true
+target-version = "py312"  # <- specify Python 3.12 explicitly here
+
+[tool.ruff.lint]
+select = [
+    "F401",  # Unused import
+    "F403",  # Wildcard import
+    "F405",  # Name may be undefined, or defined from star imports
+    "F841",  # Local variable is assigned to but never used
+    "E501",  # Line too long
+    "I",     # Import sorting (isort-compatible)
 ]

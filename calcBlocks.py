@@ -9,7 +9,7 @@ def calcBlocks():
 
     while True:
         block = input("Enter block width (or 'done' to finish): ")
-        if block.lower() == 'done':
+        if block.lower() == "done":
             break
         elif block.isdigit():
             blocks_width.append(int(block))

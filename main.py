@@ -1,14 +1,16 @@
+from rich import print
+
 from aspectRatio import aspectRatio
-from calcBlocks import calcBlocks
-from generatePassword import generatePassword
-from git_mirror import from_bitbucket_radu_to_bludelego
-from sortFiles import sortFiles
 from bitbucket import bitbucketUrl
+from calcBlocks import calcBlocks
 from convert_fonts import convertFontsFunc
 from create_project import createProject
 from cyr_to_lat import cyrToLat
+from generatePassword import generatePassword
+from git_mirror import from_bitbucket_radu_to_bludelego
 from openGitRepo import openGitRepo
-from rich import print
+from sortFiles import sortFiles
+
 
 def menu():
     print("[green]1. Create project")
@@ -45,6 +47,7 @@ def menu():
         from_bitbucket_radu_to_bludelego()
     else:
         exit()
+
 
 menu()
 

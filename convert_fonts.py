@@ -1,9 +1,12 @@
 import os
 import subprocess
 import time
+
 from libs.buffer import addToClipBoardFile
 
 start_time = time.time()
+
+
 def convertFontsFunc():
     def checkInstalledApps():
         retval = subprocess.call(["which", "woff2_compress"])
@@ -29,10 +32,12 @@ def convertFontsFunc():
 
     def woffToCss():
         woff_files = [f for f in os.listdir(".") if f.endswith(".woff")]
-        woff2_files = [f for f in os.listdir(".") if f.endswith(".woff2")]
+        [f for f in os.listdir(".") if f.endswith(".woff2")]
         # create file fonts.css
         f = open("fonts.css", "w")
-        rel_path = input("Enter relative path to fonts folder (default: assets/fonts): ")
+        rel_path = input(
+            "Enter relative path to fonts folder (default: assets/fonts): "
+        )
         if rel_path == "":
             rel_path = "assets/fonts"
         for file in woff_files:
@@ -57,14 +62,20 @@ def convertFontsFunc():
                 font_weight = "100"
             if "medium" in file_name_without_extension_lower:
                 font_weight = "500"
-            if "semibold" in file_name_without_extension_lower or "demibold" in file_name_without_extension_lower:
+            if (
+                "semibold" in file_name_without_extension_lower
+                or "demibold" in file_name_without_extension_lower
+            ):
                 font_weight = "600"
-            if "black" in file_name_without_extension_lower or "heavy" in file_name_without_extension_lower:
+            if (
+                "black" in file_name_without_extension_lower
+                or "heavy" in file_name_without_extension_lower
+            ):
                 font_weight = "900"
 
             font_name = file_name_without_extension
             capital_name = font_name.capitalize()
-            capital_name = capital_name.split('-')[0]
+            capital_name = capital_name.split("-")[0]
             code_block = f"""
             @font-face {{
                font-family: '{capital_name}'; 
@@ -75,11 +86,12 @@ def convertFontsFunc():
                font-display: swap;
              }}
             """
-        
+
             f.write(code_block)
         f.close()
+
     woffToCss()
-    addToClipBoardFile('fonts.css')
-    command="rm fonts.css"
+    addToClipBoardFile("fonts.css")
+    command = "rm fonts.css"
     os.system(command)
     print("--- %s seconds ---" % (time.time() - start_time))
