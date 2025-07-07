@@ -7,6 +7,7 @@ from convert_fonts import convertFontsFunc
 from create_project import createProject
 from cyr_to_lat import cyrToLat
 from generatePassword import generatePassword
+from get_percent import get_percent_from_width
 from git_mirror import from_bitbucket_radu_to_bludelego
 from openGitRepo import openGitRepo
 from sortFiles import sortFiles
@@ -23,6 +24,7 @@ def menu():
     print("[green]8. Aspect Ratio")
     print("[blue]9. Sort files")
     print("[green]10. Git mirror")
+    print("[green]11. Get percent")
 
     choose = input("Choose number: ")
     if choose == "1":
@@ -45,6 +47,8 @@ def menu():
         sortFiles()
     elif choose == "10":
         from_bitbucket_radu_to_bludelego()
+    elif choose == "11":
+        get_percent_from_width()
     else:
         exit()
 
