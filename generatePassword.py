@@ -20,7 +20,7 @@ def containsSymbols(password):
     return False
 
 
-def getPassword(length=12, symbols=True, uppercase=True):
+def getPassword(length: int = 12, symbols: bool = True, uppercase: bool = True):
     combination: str = string.ascii_lowercase + string.digits
     if symbols:
         combination += string.punctuation
