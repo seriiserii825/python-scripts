@@ -24,7 +24,7 @@ def menu():
     print("[green]8. Aspect Ratio")
     print("[blue]9. Sort files")
     print("[green]10. Git mirror")
-    print("[green]11. Get percent")
+    print("[green]11. Get percent from width")
 
     choose = input("Choose number: ")
     if choose == "1":
