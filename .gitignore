@@ -1,11 +1,10 @@
-venv
 # Byte-compiled / optimized / DLL files
-*/**/__pycache__/
+__pycache__/
 *.py[cod]
-*.pyc
 
 # C extensions
 *.so
+uv.lock
 
 # Distribution / packaging
 bin/
@@ -13,8 +12,6 @@ build/
 develop-eggs/
 dist/
 eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
@@ -40,7 +37,7 @@ coverage.xml
 .mr.developer.cfg
 .project
 .pydevproject
-
+venv/
 # Rope
 .ropeproject
 
@@ -50,4 +47,4 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
-uv.lock
+!libs/
