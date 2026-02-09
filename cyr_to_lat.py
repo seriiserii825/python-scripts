@@ -11,8 +11,6 @@ def filesSpaceToUnderscores():
         os.replace(filename, new_file)
 
 
-filesSpaceToUnderscores()
-
 languages = [
     {"Ё": "YO"},
     {"Й": "I"},
