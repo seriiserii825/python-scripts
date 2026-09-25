@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 
-from pyfzf.pyfzf import FzfPrompt
+from py_libs.Select import Select
 from termcolor import colored
 
 
@@ -82,9 +82,10 @@ languages = [
 
 
 def cyrToLat():
-    fzf = FzfPrompt()
     files = [i for i in os.listdir(".") if not i.startswith(".")]
-    filename = fzf.prompt(files)[0]
+    filename = Select.select_fzf_one(files)
+    if filename is None:
+        exit("No file selected")
     print(colored(filename, "green"))
     new_file = filename
     os.system(f"id3convert -s {filename}")

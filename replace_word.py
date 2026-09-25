@@ -3,7 +3,7 @@ import os
 
 from termcolor import colored
 
-from libs.select import selectMultiple
+from py_libs.Select import Select
 
 output = os.popen("fzf").read().split("\n")[0]
 file_name = output.split("/")[-1].strip()
@@ -12,7 +12,7 @@ print(colored(f"file_name: {file_name}", "green"))
 file_path_without_name = output.replace(file_name, "").strip()
 files = os.popen("grep -l -Rwn . -e " + file_name).read().split("\n")
 files = list(filter(None, files))
-selected_files = selectMultiple(files)
+selected_files = Select.select_multiple(files)
 print(colored(f"selected_files: {selected_files}", "blue"))
 
 new_word = input("Enter new word: ")

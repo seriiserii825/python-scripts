@@ -1,5 +1,4 @@
-import os
-import pyperclip
+from py_libs.Clipboard import Clipboard
 
 
 def get_percent_from_width():
@@ -18,5 +17,4 @@ def get_percent_from_width():
     percent = round((width / full_width) * 100, 2)
     percent = f"{percent}%"
 
-    pyperclip.copy(percent)
-    os.system(f"notify-send 'Percent {percent} copied to clipboard'")
+    Clipboard.write(percent)

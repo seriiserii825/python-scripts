@@ -2,14 +2,13 @@ import os
 import subprocess
 import webbrowser
 
-from classes.Select import Select
+from py_libs.Select import Select
 
 
 def from_bitbucket_radu_to_bludelego():
     repo_name = _get_repo_name()
     workspaces = ["blueline2025", "sites-bludelego"]
-    sl = Select()
-    workspace = sl.select_questionary(workspaces)
+    workspace = Select.select_questionary(workspaces)
     _clone_repo(repo_name, workspace[0])
     _cd_cloned_repo(repo_name)
     _create_repo_in_browser()

@@ -3,7 +3,7 @@ import secrets
 import string
 
 import pyperclip
-from pyfzf.pyfzf import FzfPrompt
+from py_libs.Select import Select
 
 
 def containsUppercase(password):
@@ -50,10 +50,9 @@ def generatePassword():
         password = getPassword(length, symbols)
         passwords.append(password)
 
-    fzf = FzfPrompt()
-    selected_password = fzf.prompt(passwords)
+    selected_password = Select.select_fzf_one(passwords)
     if selected_password:
-        print(f"Selected password: {selected_password[0]}")
-        copyToClipboard(selected_password[0])
+        print(f"Selected password: {selected_password}")
+        copyToClipboard(selected_password)
     else:
         print("No password selected.")
